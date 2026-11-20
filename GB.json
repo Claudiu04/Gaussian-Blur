@@ -1,0 +1,44 @@
+{
+  "type": "gaussian_blur",
+  "description": "Gaussian Blur filter for RGB or GrayScale images with configurable kernel (3x3, 5x5, 7x7, 9x9).",
+  "input_arguments":[
+    {
+      "name": "height",
+      "type": "int32",
+      "interface": "axi4-lite",
+      "addr": "0x43C0_0000"
+    },
+    {
+      "name": "width",
+      "type": "int32",
+      "interface": "axi4-lite",
+      "addr": "0x43C0_0004"
+    },
+    {
+      "name": "channels",
+      "type": "int32",
+      "interface": "axi4-lite",
+      "addr": "0x43C0_0008"
+    },
+    {
+      "name": "kernel_size",
+      "type": "int32",
+      "interface": "axi4-lite",
+      "addr": "0x43C0_000C"
+    },
+    {
+      "name": "input_image",
+      "type": "image",
+      "interface": "dma",
+      "base_addr": "0x4040_0000"
+    }
+  ],
+  "output_arguments":[
+    {
+      "name": "output_image",
+      "type": "image",
+      "interface": "dma",
+      "base_addr": "0x4040_0000"
+    }
+  ]
+}
